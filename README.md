@@ -4,6 +4,8 @@
 
 Sistema de pedidos completo, de la API a la capa de datos:
 
+![Pedidos creados desde el microfrontend: pasan de Creado a Confirmado cuando el consumidor procesa el evento](docs/img/captura.png)
+
 1. **API .NET 8** con Clean Architecture (`Domain`, `Application`, `Infrastructure`, `Api`) que guarda en PostgreSQL con EF Core y Npgsql.
 2. **Outbox transaccional** y publicación en **Azure Service Bus** (o un bus en memoria para desarrollo). Incluye consumidor con reintentos, dead-letter, idempotencia y concurrencia optimista.
 3. **Microfrontends con React**: un `shell` con login por rol y el remoto `mfe-pedidos` (Module Federation).
