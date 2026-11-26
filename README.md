@@ -1,5 +1,7 @@
 # Portafolio Pedidos · .NET 8 + React + Databricks
 
+[![CI](https://github.com/VicentePerezHdz/portafolio-pedidos/actions/workflows/ci.yml/badge.svg)](https://github.com/VicentePerezHdz/portafolio-pedidos/actions/workflows/ci.yml) [![Licencia: MIT](https://img.shields.io/badge/licencia-MIT-blue.svg)](LICENSE)
+
 Sistema de pedidos completo, de la API a la capa de datos:
 
 1. **API .NET 8** con Clean Architecture (`Domain`, `Application`, `Infrastructure`, `Api`) que guarda en PostgreSQL con EF Core y Npgsql.
@@ -28,3 +30,7 @@ python -m venv .venv; .venv\Scripts\pip install -r requirements.txt
 También se puede levantar con `docker-compose up` (PostgreSQL y API). El CI está en `.github/workflows/ci.yml`.
 
 La explicación completa (arquitectura, dónde está cada tecnología, decisiones de diseño) está en [`docs/Documento_Transicion.md`](docs/Documento_Transicion.md).
+
+## Licencia
+
+[MIT](LICENSE)
