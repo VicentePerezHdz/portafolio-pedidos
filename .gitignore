@@ -1,0 +1,53 @@
+# Compilados .NET
+bin/
+obj/
+*.user
+.vs/
+
+# Android / Gradle / Kotlin
+.gradle/
+build/
+local.properties
+*.apk
+*.aab
+captures/
+.externalNativeBuild/
+.cxx/
+.kotlin/
+
+# IDEs
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+*.iml
+
+# Node / frontend
+node_modules/
+dist/
+.angular/
+coverage/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# Variables locales y secretos
+.env.local
+.env.*.local
+appsettings.*.local.json
+
+# Sistema
+Thumbs.db
+.DS_Store
+
+# Datos locales (SQLite, Spark)
+*.db
+*.db-shm
+*.db-wal
+spark-warehouse/
+metastore_db/

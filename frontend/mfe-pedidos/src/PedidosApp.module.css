@@ -1,0 +1,19 @@
+/* CSS Modules: Vite renombra cada clase (p. ej. .tabla -> ._tabla_x1y2z), así los estilos de este
+   micro frontend no chocan con los del shell ni con otros remotos (aislamiento de CSS). */
+.raiz { font-family: system-ui, 'Segoe UI', sans-serif; color: #1c1c1c; }
+.encabezado { display: flex; align-items: center; gap: .75rem; margin-bottom: .75rem; }
+.titulo { font-size: 1.2rem; margin: 0; color: #0f5c4d; }
+.tabla { width: 100%; border-collapse: collapse; background: #fff; }
+.tabla th, .tabla td { text-align: left; padding: .5rem; border-bottom: 1px solid #e1e4e8; }
+.boton, .secundario { font: inherit; padding: .35rem .8rem; border-radius: 6px; cursor: pointer; text-decoration: none; border: 1px solid #0f5c4d; }
+.boton { background: #0f5c4d; color: #fff; }
+.secundario { background: #fff; color: #0f5c4d; margin-left: .5rem; }
+.boton:disabled { opacity: .6; }
+.formulario { display: grid; grid-template-columns: max-content 16rem; gap: .5rem 1rem; align-items: center; }
+.formulario input { font: inherit; padding: .35rem .5rem; border: 1px solid #b8bdc6; border-radius: 6px; }
+.error { color: #b00020; font-weight: 600; }
+.estadoCreado, .estadoConfirmado, .estadoCancelado { padding: .1rem .5rem; border-radius: 999px; font-size: .85rem; }
+.estadoCreado { background: #fff4d6; color: #7a5200; }
+.estadoConfirmado { background: #dff3e8; color: #11663a; }
+.estadoCancelado { background: #f1f1f1; color: #555; }
+.oculto { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }

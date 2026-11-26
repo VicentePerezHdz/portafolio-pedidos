@@ -1,0 +1,29 @@
+# Entorno local "como producción": PostgreSQL real + la API en contenedor.
+# Requiere Docker Desktop (no está instalado en este equipo al 2026-11-23).
+#   docker compose up -d postgres
+#   cd backend && dotnet ef database update --project src/Pedidos.Infrastructure --startup-project src/Pedidos.Api
+#   docker compose up --build api
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: pedidos
+      POSTGRES_USER: pedidos
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-solo-local}   # en la nube: Azure Database for PostgreSQL + identidad administrada
+    ports: ["5432:5432"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pedidos"]
+      interval: 5s
+      retries: 10
+
+  api:
+    build: ./backend
+    depends_on:
+      postgres: { condition: service_healthy }
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development        # habilita /dev/token y Swagger; nunca en producción
+      BaseDatos__Proveedor: Postgres
+      BaseDatos__CrearAlIniciar: "false"
+      ConnectionStrings__Pedidos: Host=postgres;Database=pedidos;Username=pedidos;Password=${POSTGRES_PASSWORD:-solo-local}
+      Mensajeria__Modo: EnMemoria
+    ports: ["5090:8080"]
