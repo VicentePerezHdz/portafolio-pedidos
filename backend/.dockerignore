@@ -1,0 +1,6 @@
+# Compilados locales: si entran a la imagen, pisan el restore hecho dentro del contenedor.
+**/bin/
+**/obj/
+tests/
+*.user
+.vs/
